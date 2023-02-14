@@ -12,8 +12,9 @@ jobs:
           node-version: 16
       - name: Cache dependencies
         uses: actions/cache@v2
-        with: |
-          path: **/node_modules
+        with:
+          path: |
+            **/node_modules
           key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
       - name: Install dependencies
         run: |
