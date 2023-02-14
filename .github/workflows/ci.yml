@@ -4,26 +4,23 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout repository
-       uses: actions/checkout@v2
-      -name: Setup Node.js
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      -name: Cache dependencies
+      - name: Cache dependencies
         uses: actions/cache@v2
-        with:
+        with: |
           path: **/node_modules
           key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
-      -name: Install dependencies
+      - name: Install dependencies
         run: |
           pnpm install
           cd ./test/scope/template
           pnpm install
           cd ../../../
-      -name: Run tests
+      - name: Run tests
         run: |
           pnpm test
-
-
-
