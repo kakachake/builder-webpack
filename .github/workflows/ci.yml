@@ -10,12 +10,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: stable
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: stable
           run_install: true
 
       - name: Cache dependencies
