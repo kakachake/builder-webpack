@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
-          cd ./test/scope/template
+          cd ./test/smoke/template
           pnpm install
           cd ../../../
 
